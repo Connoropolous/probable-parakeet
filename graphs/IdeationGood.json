@@ -1,0 +1,177 @@
+{
+    "caseSensitive": false,
+    "properties": {
+        "name": "IdeationGood",
+        "description": "",
+        "icon": "lightbulb-o",
+        "environment": {
+            "type": "noflo-nodejs"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "rsf/CollectResponses_ey8mk": {
+            "component": "rsf/CollectResponses",
+            "metadata": {
+                "label": "CollectResponses",
+                "x": 720,
+                "y": 432,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "strings/ParseJson_yfyz6": {
+            "component": "strings/ParseJson",
+            "metadata": {
+                "label": "ParseJson",
+                "x": 324,
+                "y": 576,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/ReadEnv_wszfg": {
+            "component": "core/ReadEnv",
+            "metadata": {
+                "label": "ReadEnv",
+                "x": 180,
+                "y": 576,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/Output_zlbmq": {
+            "component": "core/Output",
+            "metadata": {
+                "label": "Output",
+                "x": 828,
+                "y": 540,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "strings/ParseJson_622e0": {
+            "component": "strings/ParseJson",
+            "metadata": {
+                "label": "ParseJson",
+                "x": 288,
+                "y": 432,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "rsf/SendMessageToAll_2benw": {
+            "component": "rsf/SendMessageToAll",
+            "metadata": {
+                "label": "SendMessageToAll",
+                "x": 504,
+                "y": 540,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "rsf/CollectResponses_ey8mk",
+                "port": "error"
+            },
+            "tgt": {
+                "process": "core/Output_zlbmq",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "core/ReadEnv_wszfg",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "strings/ParseJson_yfyz6",
+                "port": "in"
+            },
+            "metadata": {
+                "route": null
+            }
+        },
+        {
+            "src": {
+                "process": "strings/ParseJson_yfyz6",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "rsf/SendMessageToAll_2benw",
+                "port": "bot_configs"
+            },
+            "metadata": {
+                "route": null
+            }
+        },
+        {
+            "src": {
+                "process": "strings/ParseJson_622e0",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "rsf/SendMessageToAll_2benw",
+                "port": "contactable_configs"
+            },
+            "metadata": {
+                "route": null
+            }
+        },
+        {
+            "data": "BOT_CONFIG",
+            "tgt": {
+                "process": "core/ReadEnv_wszfg",
+                "port": "key"
+            }
+        },
+        {
+            "data": "1",
+            "tgt": {
+                "process": "rsf/CollectResponses_ey8mk",
+                "port": "max_responses"
+            }
+        },
+        {
+            "data": "x",
+            "tgt": {
+                "process": "rsf/CollectResponses_ey8mk",
+                "port": "prompt"
+            }
+        },
+        {
+            "data": [],
+            "tgt": {
+                "process": "rsf/CollectResponses_ey8mk",
+                "port": "contactable_configs"
+            }
+        },
+        {
+            "data": 5000,
+            "tgt": {
+                "process": "rsf/CollectResponses_ey8mk",
+                "port": "max_time"
+            }
+        },
+        {
+            "data": "allo",
+            "tgt": {
+                "process": "rsf/SendMessageToAll_2benw",
+                "port": "message"
+            }
+        },
+        {
+            "data": "[{\"type\": \"sms\", \"id\": \"+12266065646\" }]",
+            "tgt": {
+                "process": "strings/ParseJson_622e0",
+                "port": "in"
+            }
+        }
+    ]
+}

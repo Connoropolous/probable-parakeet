@@ -1,0 +1,95 @@
+{
+    "caseSensitive": false,
+    "properties": {
+        "name": "TestParticipantRegister",
+        "description": "TestParticipantRegister",
+        "icon": "cog",
+        "environment": {
+            "type": "noflo-nodejs"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "rsf/ParticipantRegister_l3od7": {
+            "component": "rsf/ParticipantRegister",
+            "metadata": {
+                "label": "ParticipantRegister",
+                "x": 468,
+                "y": 288,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/Output_h0vzj": {
+            "component": "core/Output",
+            "metadata": {
+                "label": "Output",
+                "x": 612,
+                "y": 288,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "rsf/ParticipantRegister_l3od7",
+                "port": "register_url"
+            },
+            "tgt": {
+                "process": "core/Output_h0vzj",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "rsf/ParticipantRegister_l3od7",
+                "port": "results"
+            },
+            "tgt": {
+                "process": "core/Output_h0vzj",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "data": "test desc",
+            "tgt": {
+                "process": "rsf/ParticipantRegister_l3od7",
+                "port": "process_description"
+            }
+        },
+        {
+            "data": 2,
+            "tgt": {
+                "process": "rsf/ParticipantRegister_l3od7",
+                "port": "max_participants"
+            }
+        },
+        {
+            "data": "https://noflo-rsf-client.herokuapp.com",
+            "tgt": {
+                "process": "rsf/ParticipantRegister_l3od7",
+                "port": "socket_url"
+            }
+        },
+        {
+            "data": true,
+            "tgt": {
+                "process": "rsf/ParticipantRegister_l3od7",
+                "port": "is_facilitator"
+            }
+        },
+        {
+            "data": 60,
+            "tgt": {
+                "process": "rsf/ParticipantRegister_l3od7",
+                "port": "max_time"
+            }
+        }
+    ]
+}

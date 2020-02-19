@@ -1,0 +1,655 @@
+{
+    "caseSensitive": false,
+    "properties": {
+        "name": "main",
+        "environment": {
+            "type": "noflo-nodejs"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "rsf/CollectResponses_lctpp": {
+            "component": "rsf/CollectResponses",
+            "metadata": {
+                "label": "CollectResponses",
+                "x": 180,
+                "y": 504,
+                "width": 72,
+                "height": 84
+            }
+        },
+        "rsf/ResponseForEach_cd3dx": {
+            "component": "rsf/ResponseForEach",
+            "metadata": {
+                "label": "ResponseForEach",
+                "x": 792,
+                "y": 1116,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "rsf/FormatReactionsList_cukq9": {
+            "component": "rsf/FormatReactionsList",
+            "metadata": {
+                "label": "FormatReactionsList",
+                "x": 1080,
+                "y": 1116,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/MakeFunction_lsxgf": {
+            "component": "core/MakeFunction",
+            "metadata": {
+                "label": "MakeFunction",
+                "x": 1224,
+                "y": 504,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "rsf/SendMessageToAll_xil86": {
+            "component": "rsf/SendMessageToAll",
+            "metadata": {
+                "label": "SendMessageToAll",
+                "x": 1476,
+                "y": 504,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "Reaction Options": {
+            "component": "core/MakeFunction",
+            "metadata": {
+                "label": "Reaction Options",
+                "x": 360,
+                "y": 1152,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "CollectResponsesPeople": {
+            "component": "core/MakeFunction",
+            "metadata": {
+                "label": "CollectResponsesPeople",
+                "x": 252,
+                "y": -144,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "rsf/WriteMongoRecord_ij8y8": {
+            "component": "rsf/WriteMongoRecord",
+            "metadata": {
+                "label": "WriteMongoRecord",
+                "x": 756,
+                "y": -180,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "rsf/WriteMongoRecord_tbmto": {
+            "component": "rsf/WriteMongoRecord",
+            "metadata": {
+                "label": "WriteMongoRecord",
+                "x": 756,
+                "y": -72,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/Output_k65dh": {
+            "component": "core/Output",
+            "metadata": {
+                "label": "Output",
+                "x": 936,
+                "y": -108,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "rsf/SendMessageToAll_3h2jh": {
+            "component": "rsf/SendMessageToAll",
+            "metadata": {
+                "label": "SendMessageToAll",
+                "x": 504,
+                "y": 0,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "flow/All_x5ng4": {
+            "component": "flow/All",
+            "metadata": {
+                "label": "All",
+                "x": 108,
+                "y": 72,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/MakeFunction_9yk61": {
+            "component": "core/MakeFunction",
+            "metadata": {
+                "label": "MakeFunction",
+                "x": 252,
+                "y": 72,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/MakeFunction_z9l4d": {
+            "component": "core/MakeFunction",
+            "metadata": {
+                "label": "MakeFunction",
+                "x": -36,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/MakeFunction_zl4o0": {
+            "component": "core/MakeFunction",
+            "metadata": {
+                "label": "MakeFunction",
+                "x": -36,
+                "y": -72,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/MakeFunction_2uqce": {
+            "component": "core/MakeFunction",
+            "metadata": {
+                "label": "MakeFunction",
+                "x": -72,
+                "y": 72,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "rsf/PairwiseComparison_h3hhw": {
+            "component": "rsf/PairwiseComparison",
+            "metadata": {
+                "label": "PairwiseComparison",
+                "x": 432,
+                "y": 576,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "rsf/SortPairwiseResults_u5llj": {
+            "component": "rsf/SortPairwiseResults",
+            "metadata": {
+                "label": "SortPairwiseResults",
+                "x": 720,
+                "y": 504,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "rsf/FormatStatementList_o29mc": {
+            "component": "rsf/FormatStatementList",
+            "metadata": {
+                "label": "FormatStatementList",
+                "x": 972,
+                "y": 504,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "rsf/PairwiseComparison_zw4px": {
+            "component": "rsf/PairwiseComparison",
+            "metadata": {
+                "label": "PairwiseComparison",
+                "x": 576,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "test/botconfig_dnbm9": {
+            "component": "test/botconfig",
+            "metadata": {
+                "label": "botconfig",
+                "x": -36,
+                "y": 540,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "test/botconfig_l5pvk": {
+            "component": "test/botconfig",
+            "metadata": {
+                "label": "botconfig",
+                "x": 288,
+                "y": 648,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "test/botconfig_4v82t": {
+            "component": "test/botconfig",
+            "metadata": {
+                "label": "botconfig",
+                "x": 396,
+                "y": 108,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "test/botconfig_ijg0e": {
+            "component": "test/botconfig",
+            "metadata": {
+                "label": "botconfig",
+                "x": 1332,
+                "y": 648,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "core/MakeFunction_lsxgf",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "rsf/SendMessageToAll_xil86",
+                "port": "message"
+            },
+            "metadata": {
+                "route": 4
+            }
+        },
+        {
+            "src": {
+                "process": "Reaction Options",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "rsf/ResponseForEach_cd3dx",
+                "port": "options"
+            },
+            "metadata": {
+                "route": 2
+            }
+        },
+        {
+            "src": {
+                "process": "rsf/WriteMongoRecord_tbmto",
+                "port": "error"
+            },
+            "tgt": {
+                "process": "core/Output_k65dh",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "rsf/WriteMongoRecord_ij8y8",
+                "port": "error"
+            },
+            "tgt": {
+                "process": "core/Output_k65dh",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "CollectResponsesPeople",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "rsf/SendMessageToAll_3h2jh",
+                "port": "contactable_configs"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "core/MakeFunction_9yk61",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "rsf/SendMessageToAll_3h2jh",
+                "port": "message"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "flow/All_x5ng4",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "core/MakeFunction_9yk61",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "core/MakeFunction_z9l4d",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "flow/All_x5ng4",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "core/MakeFunction_2uqce",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "flow/All_x5ng4",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "core/MakeFunction_zl4o0",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "flow/All_x5ng4",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "rsf/ResponseForEach_cd3dx",
+                "port": "results"
+            },
+            "tgt": {
+                "process": "rsf/FormatReactionsList_cukq9",
+                "port": "reactions"
+            },
+            "metadata": {
+                "route": null
+            }
+        },
+        {
+            "src": {
+                "process": "rsf/PairwiseComparison_h3hhw",
+                "port": "results"
+            },
+            "tgt": {
+                "process": "rsf/SortPairwiseResults_u5llj",
+                "port": "rankings"
+            },
+            "metadata": {
+                "route": 3
+            }
+        },
+        {
+            "src": {
+                "process": "rsf/CollectResponses_lctpp",
+                "port": "results"
+            },
+            "tgt": {
+                "process": "rsf/PairwiseComparison_h3hhw",
+                "port": "statements"
+            },
+            "metadata": {
+                "route": 3
+            }
+        },
+        {
+            "src": {
+                "process": "rsf/CollectResponses_lctpp",
+                "port": "results"
+            },
+            "tgt": {
+                "process": "rsf/SortPairwiseResults_u5llj",
+                "port": "statements"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "rsf/SortPairwiseResults_u5llj",
+                "port": "sorted"
+            },
+            "tgt": {
+                "process": "rsf/FormatStatementList_o29mc",
+                "port": "statements"
+            },
+            "metadata": {
+                "route": 3
+            }
+        },
+        {
+            "src": {
+                "process": "rsf/FormatStatementList_o29mc",
+                "port": "formatted"
+            },
+            "tgt": {
+                "process": "core/MakeFunction_lsxgf",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 3
+            }
+        },
+        {
+            "src": {
+                "process": "test/botconfig_dnbm9",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "rsf/CollectResponses_lctpp",
+                "port": "bot_configs"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "test/botconfig_l5pvk",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "rsf/PairwiseComparison_h3hhw",
+                "port": "bot_configs"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "test/botconfig_4v82t",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "rsf/SendMessageToAll_3h2jh",
+                "port": "bot_configs"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "test/botconfig_ijg0e",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "rsf/SendMessageToAll_xil86",
+                "port": "bot_configs"
+            },
+            "metadata": {}
+        },
+        {
+            "data": 600,
+            "tgt": {
+                "process": "rsf/ResponseForEach_cd3dx",
+                "port": "max_time"
+            }
+        },
+        {
+            "data": "return 'Here are the results: ' + x",
+            "tgt": {
+                "process": "core/MakeFunction_lsxgf",
+                "port": "function"
+            }
+        },
+        {
+            "data": "x",
+            "tgt": {
+                "process": "CollectResponsesPeople",
+                "port": "in"
+            }
+        },
+        {
+            "data": "x",
+            "tgt": {
+                "process": "Reaction Options",
+                "port": "in"
+            }
+        },
+        {
+            "data": "return [{triggers: ['a', 'A'], text: 'Agree' }, {triggers: ['d', 'D'], text: 'Disagree' }]",
+            "tgt": {
+                "process": "Reaction Options",
+                "port": "function"
+            }
+        },
+        {
+            "data": "allthethings",
+            "tgt": {
+                "process": "rsf/WriteMongoRecord_ij8y8",
+                "port": "collection_name"
+            }
+        },
+        {
+            "data": "everything",
+            "tgt": {
+                "process": "rsf/WriteMongoRecord_ij8y8",
+                "port": "database_name"
+            }
+        },
+        {
+            "data": "mongodb://0.tcp.ngrok.io:11476",
+            "tgt": {
+                "process": "rsf/WriteMongoRecord_ij8y8",
+                "port": "mongo_uri"
+            }
+        },
+        {
+            "data": "Test prompt",
+            "tgt": {
+                "process": "rsf/CollectResponses_lctpp",
+                "port": "prompt"
+            }
+        },
+        {
+            "data": "return [{ type: 'telegram', id: 'connorturland' }]",
+            "tgt": {
+                "process": "CollectResponsesPeople",
+                "port": "function"
+            }
+        },
+        {
+            "data": "mongodb://0.tcp.ngrok.io:11476",
+            "tgt": {
+                "process": "rsf/WriteMongoRecord_tbmto",
+                "port": "mongo_uri"
+            }
+        },
+        {
+            "data": "everything",
+            "tgt": {
+                "process": "rsf/WriteMongoRecord_tbmto",
+                "port": "database_name"
+            }
+        },
+        {
+            "data": "allthethings",
+            "tgt": {
+                "process": "rsf/WriteMongoRecord_tbmto",
+                "port": "collection_name"
+            }
+        },
+        {
+            "data": "return x.join('\\n')",
+            "tgt": {
+                "process": "core/MakeFunction_9yk61",
+                "port": "function"
+            }
+        },
+        {
+            "data": "return \"Summary: \" + x",
+            "tgt": {
+                "process": "core/MakeFunction_zl4o0",
+                "port": "function"
+            }
+        },
+        {
+            "data": "return \"Reaction: \" + x",
+            "tgt": {
+                "process": "core/MakeFunction_2uqce",
+                "port": "function"
+            }
+        },
+        {
+            "data": "return \"Ideation: \" + x",
+            "tgt": {
+                "process": "core/MakeFunction_z9l4d",
+                "port": "function"
+            }
+        },
+        {
+            "data": 120,
+            "tgt": {
+                "process": "rsf/PairwiseComparison_h3hhw",
+                "port": "max_time"
+            }
+        },
+        {
+            "data": "choose",
+            "tgt": {
+                "process": "rsf/PairwiseComparison_h3hhw",
+                "port": "choice"
+            }
+        },
+        {
+            "data": "10",
+            "tgt": {
+                "process": "rsf/CollectResponses_lctpp",
+                "port": "max_responses"
+            }
+        },
+        {
+            "data": 60,
+            "tgt": {
+                "process": "rsf/CollectResponses_lctpp",
+                "port": "max_time"
+            }
+        },
+        {
+            "data": false,
+            "tgt": {
+                "process": "rsf/CollectResponses_lctpp",
+                "port": "anonymous"
+            }
+        },
+        {
+            "data": false,
+            "tgt": {
+                "process": "rsf/CollectResponses_lctpp",
+                "port": "share"
+            }
+        }
+    ]
+}

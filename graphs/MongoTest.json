@@ -1,0 +1,79 @@
+{
+    "caseSensitive": false,
+    "properties": {
+        "name": "MongoTest",
+        "description": "connect to mongo and write",
+        "icon": "cog",
+        "environment": {
+            "type": "noflo-nodejs"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "rsf/WriteMongoRecord_vqqsh": {
+            "component": "rsf/WriteMongoRecord",
+            "metadata": {
+                "label": "WriteMongoRecord",
+                "x": 468,
+                "y": 360,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/Output_hccnp": {
+            "component": "core/Output",
+            "metadata": {
+                "label": "Output",
+                "x": 648,
+                "y": 360,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "rsf/WriteMongoRecord_vqqsh",
+                "port": "error"
+            },
+            "tgt": {
+                "process": "core/Output_hccnp",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "data": "everything",
+            "tgt": {
+                "process": "rsf/WriteMongoRecord_vqqsh",
+                "port": "database_name"
+            }
+        },
+        {
+            "data": "allthethings",
+            "tgt": {
+                "process": "rsf/WriteMongoRecord_vqqsh",
+                "port": "collection_name"
+            }
+        },
+        {
+            "data": {
+                "test": "value"
+            },
+            "tgt": {
+                "process": "rsf/WriteMongoRecord_vqqsh",
+                "port": "record"
+            }
+        },
+        {
+            "data": "mongodb://0.tcp.ngrok.io:11476",
+            "tgt": {
+                "process": "rsf/WriteMongoRecord_vqqsh",
+                "port": "mongo_uri"
+            }
+        }
+    ]
+}

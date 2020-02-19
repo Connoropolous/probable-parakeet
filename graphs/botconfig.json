@@ -1,0 +1,65 @@
+{
+    "caseSensitive": false,
+    "properties": {
+        "name": "botconfig",
+        "description": "get the bot config from the environment variable",
+        "icon": "cog",
+        "environment": {
+            "type": "noflo-nodejs"
+        }
+    },
+    "inports": {},
+    "outports": {
+        "out": {
+            "process": "strings/ParseJson_mvy4g",
+            "port": "out",
+            "metadata": {
+                "x": 864,
+                "y": 288
+            }
+        }
+    },
+    "groups": [],
+    "processes": {
+        "core/ReadEnv_sqfkq": {
+            "component": "core/ReadEnv",
+            "metadata": {
+                "label": "ReadEnv",
+                "x": 468,
+                "y": 288,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "strings/ParseJson_mvy4g": {
+            "component": "strings/ParseJson",
+            "metadata": {
+                "label": "ParseJson",
+                "x": 720,
+                "y": 288,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "core/ReadEnv_sqfkq",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "strings/ParseJson_mvy4g",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "data": "BOT_CONFIG",
+            "tgt": {
+                "process": "core/ReadEnv_sqfkq",
+                "port": "key"
+            }
+        }
+    ]
+}

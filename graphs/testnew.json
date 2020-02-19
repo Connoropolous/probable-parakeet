@@ -1,0 +1,63 @@
+{
+    "caseSensitive": false,
+    "properties": {
+        "name": "testnew",
+        "description": "",
+        "icon": "cog",
+        "environment": {
+            "type": "noflo-nodejs"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "core/Output_gx2fx": {
+            "component": "core/Output",
+            "metadata": {
+                "label": "Output",
+                "x": 864,
+                "y": 468,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/MakeFunction_hlm9z": {
+            "component": "core/MakeFunction",
+            "metadata": {
+                "label": "MakeFunction",
+                "x": 648,
+                "y": 468,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "core/MakeFunction_hlm9z",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "core/Output_gx2fx",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "data": "return x",
+            "tgt": {
+                "process": "core/MakeFunction_hlm9z",
+                "port": "function"
+            }
+        },
+        {
+            "data": "123",
+            "tgt": {
+                "process": "core/MakeFunction_hlm9z",
+                "port": "in"
+            }
+        }
+    ]
+}

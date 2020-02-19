@@ -1,0 +1,236 @@
+{
+    "caseSensitive": false,
+    "properties": {
+        "name": "PairwiseOnly",
+        "description": "",
+        "icon": "cog",
+        "environment": {
+            "type": "noflo-nodejs"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [
+        {
+            "name": "botconfig",
+            "nodes": [
+                "core/ReadEnv_rhet4",
+                "strings/ParseJson_fm82o"
+            ],
+            "metadata": {
+                "description": ""
+            }
+        }
+    ],
+    "processes": {
+        "strings/ParseJson_fm82o": {
+            "component": "strings/ParseJson",
+            "metadata": {
+                "label": "ParseJson",
+                "x": 108,
+                "y": 612,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "rsf/FormatStatementList_if1bj": {
+            "component": "rsf/FormatStatementList",
+            "metadata": {
+                "label": "FormatStatementList",
+                "x": 720,
+                "y": 360,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/ReadEnv_rhet4": {
+            "component": "core/ReadEnv",
+            "metadata": {
+                "label": "ReadEnv",
+                "x": -36,
+                "y": 612,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "rsf/PairwiseComparison_za6cv": {
+            "component": "rsf/PairwiseComparison",
+            "metadata": {
+                "label": "PairwiseComparison",
+                "x": 324,
+                "y": 360,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "rsf/SortPairwiseResults_vo2bk": {
+            "component": "rsf/SortPairwiseResults",
+            "metadata": {
+                "label": "SortPairwiseResults",
+                "x": 540,
+                "y": 360,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "rsf/SendMessageToAll_1xc4i": {
+            "component": "rsf/SendMessageToAll",
+            "metadata": {
+                "label": "SendMessageToAll",
+                "x": 1152,
+                "y": 396,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/MakeFunction_o5dy0": {
+            "component": "core/MakeFunction",
+            "metadata": {
+                "label": "MakeFunction",
+                "x": 936,
+                "y": 360,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/Kick_a5cnd": {
+            "component": "core/Kick",
+            "metadata": {
+                "label": "Kick",
+                "x": 108,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "rsf/SortPairwiseResults_vo2bk",
+                "port": "sorted"
+            },
+            "tgt": {
+                "process": "rsf/FormatStatementList_if1bj",
+                "port": "statements"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "rsf/FormatStatementList_if1bj",
+                "port": "formatted"
+            },
+            "tgt": {
+                "process": "core/MakeFunction_o5dy0",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "core/MakeFunction_o5dy0",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "rsf/SendMessageToAll_1xc4i",
+                "port": "message"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "strings/ParseJson_fm82o",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "rsf/PairwiseComparison_za6cv",
+                "port": "bot_configs"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "strings/ParseJson_fm82o",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "rsf/SendMessageToAll_1xc4i",
+                "port": "bot_configs"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "rsf/PairwiseComparison_za6cv",
+                "port": "results"
+            },
+            "tgt": {
+                "process": "rsf/SortPairwiseResults_vo2bk",
+                "port": "rankings"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "core/Kick_a5cnd",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "rsf/PairwiseComparison_za6cv",
+                "port": "statements"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "core/Kick_a5cnd",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "rsf/SortPairwiseResults_vo2bk",
+                "port": "statements"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "data": [],
+            "tgt": {
+                "process": "rsf/SendMessageToAll_1xc4i",
+                "port": "contactable_configs"
+            }
+        },
+        {
+            "data": 1,
+            "tgt": {
+                "process": "rsf/PairwiseComparison_za6cv",
+                "port": "max_time"
+            }
+        },
+        {
+            "data": "x",
+            "tgt": {
+                "process": "rsf/PairwiseComparison_za6cv",
+                "port": "choice"
+            }
+        },
+        {
+            "data": "['test']",
+            "tgt": {
+                "process": "core/Kick_a5cnd",
+                "port": "data"
+            }
+        },
+        {
+            "data": [],
+            "tgt": {
+                "process": "rsf/PairwiseComparison_za6cv",
+                "port": "contactable_configs"
+            }
+        }
+    ]
+}
